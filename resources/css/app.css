@@ -1,4 +1,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import '../owlcarousel/dist/assets/owl.carousel.css';
+@import '../owlcarousel/dist/assets/owl.theme.default.css';
 @import './style';

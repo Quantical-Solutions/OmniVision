@@ -37,6 +37,9 @@ use Laravel\Jetstream\Jetstream;
 // Welcome...
 Route::get('/', 'App\Http\Controllers\WelcomeController@index')->name('welcome');
 
+//Tasks...
+Route::resource('taches', \App\Http\Controllers\TasksController::class);
+
 
 /*
  |--------------------------------------------------------------------------
