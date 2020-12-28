@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
 
-            @if(Auth::check())
+            @if(!(request()->routeIs('welcome')) && !(request()->routeIs('demos')) && !(request()->routeIs('docs')) && !(request()->routeIs('pricing')) && !(request()->routeIs('basket')))
 
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
@@ -75,9 +75,14 @@
                                 </div>
                             </button>
                         @endif
+
                     </x-slot>
 
                     <x-slot name="content">
+                        <x-jet-dropdown-link href="{{ route('dashboard') }}">
+                            {{ __('Dashboard') }}
+                        </x-jet-dropdown-link>
+
                         <!-- Account Management -->
                         <div class="block px-4 py-2 text-xs text-gray-400">
                             {{ __('Manage Account') }}
@@ -142,6 +147,20 @@
                         </form>
                     </x-slot>
                 </x-jet-dropdown>
+
+                @if(request()->routeIs('welcome') || request()->routeIs('demos') || request()->routeIs('docs') || request()->routeIs('pricing') || request()->routeIs('basket'))
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex special-header-height">
+                        <x-jet-nav-link href="{{ route('basket') }}" class="login-links" :active="request()->routeIs('basket')">
+                            <svg viewBox="0 0 24 24" class="basket-svg">
+                                <circle cx="6" cy="19" r="2"></circle>
+                                <circle cx="16" cy="19" r="2"></circle>
+                                <path d="M19.997 7H7.13l-.885-2.352A1 1 0 0 0 5.308 4H2v2h2.628L5 7l2.368 7.103a2 2 0 0 0 2.53 1.265l8.734-2.912A2 2 0 0 0 20 10.557z"></path>
+                            </svg>
+                        </x-jet-nav-link>
+                    </div>
+
+                @endif
             </div>
 
         @else
@@ -150,6 +169,13 @@
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <x-jet-nav-link href="{{ route('login') }}" class="login-links">
                     {{ __('Login') }}
+                </x-jet-nav-link>
+                <x-jet-nav-link href="{{ route('basket') }}" class="login-links" :active="request()->routeIs('basket')">
+                    <svg viewBox="0 0 24 24" class="basket-svg">
+                        <circle cx="6" cy="19" r="2"></circle>
+                        <circle cx="16" cy="19" r="2"></circle>
+                        <path d="M19.997 7H7.13l-.885-2.352A1 1 0 0 0 5.308 4H2v2h2.628L5 7l2.368 7.103a2 2 0 0 0 2.53 1.265l8.734-2.912A2 2 0 0 0 20 10.557z"></path>
+                    </svg>
                 </x-jet-nav-link>
                 @if (Route::has('register'))
                     <x-jet-nav-link href="{{ route('register') }}" class="login-links">
@@ -172,7 +198,7 @@
         </div>
     </div>
 
-    @if(Auth::check())
+    @if(!(request()->routeIs('welcome')) && !(request()->routeIs('demos')) && !(request()->routeIs('docs')) && !(request()->routeIs('pricing')) && !(request()->routeIs('basket')))
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
@@ -222,6 +248,14 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                @if(request()->routeIs('welcome') || request()->routeIs('demos') || request()->routeIs('docs') || request()->routeIs('pricing') || request()->routeIs('basket'))
+
+                    <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-jet-responsive-nav-link>
+
+                @endif
+
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
@@ -234,9 +268,13 @@
                 @endif
 
             <!-- Authentication -->
-                <x-jet-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
-                    {{ __('OmniVision') }}
-                </x-jet-responsive-nav-link>
+                @if(!(request()->routeIs('welcome')) && !(request()->routeIs('demos')) && !(request()->routeIs('docs')) && !(request()->routeIs('pricing')) && !(request()->routeIs('basket')))
+
+                    <x-jet-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+                        {{ __('OmniVision') }}
+                    </x-jet-responsive-nav-link>
+                    
+                @endif
 
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -277,6 +315,17 @@
                     @endforeach
                 @endif
             </div>
+            @if(request()->routeIs('welcome') || request()->routeIs('demos') || request()->routeIs('docs') || request()->routeIs('pricing') || request()->routeIs('basket'))
+                <div class="pt-2 pb-3 space-y-1">
+                    <x-jet-responsive-nav-link href="{{ route('basket') }}" :active="request()->routeIs('basket')">
+                        <svg viewBox="0 0 24 24" class="basket-svg">
+                            <circle cx="6" cy="19" r="2"></circle>
+                            <circle cx="16" cy="19" r="2"></circle>
+                            <path d="M19.997 7H7.13l-.885-2.352A1 1 0 0 0 5.308 4H2v2h2.628L5 7l2.368 7.103a2 2 0 0 0 2.53 1.265l8.734-2.912A2 2 0 0 0 20 10.557z"></path>
+                        </svg>
+                    </x-jet-responsive-nav-link>
+                </div>
+            @endif
         </div>
 
     @else
@@ -284,6 +333,16 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
                 {{ __('Login') }}
+            </x-jet-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('basket') }}" :active="request()->routeIs('basket')">
+                <svg viewBox="0 0 24 24" class="basket-svg">
+                    <circle cx="6" cy="19" r="2"></circle>
+                    <circle cx="16" cy="19" r="2"></circle>
+                    <path d="M19.997 7H7.13l-.885-2.352A1 1 0 0 0 5.308 4H2v2h2.628L5 7l2.368 7.103a2 2 0 0 0 2.53 1.265l8.734-2.912A2 2 0 0 0 20 10.557z"></path>
+                </svg>
             </x-jet-responsive-nav-link>
         </div>
 

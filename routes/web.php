@@ -38,7 +38,9 @@ use Laravel\Jetstream\Jetstream;
 Route::get('/', 'App\Http\Controllers\WelcomeController@index')->name('welcome');
 Route::get('/demos', 'App\Http\Controllers\DemosController@index')->name('demos');
 Route::get('/docs', 'App\Http\Controllers\DocsController@index')->name('docs');
-Route::get('/prix', 'App\Http\Controllers\PricingController@index')->name('pricing');
+Route::get('/plans', 'App\Http\Controllers\PricingController@index')->name('pricing');
+// Sales Hub
+Route::get('/panier/{step?}', '\App\Http\Controllers\SalesHubController@router')->name('basket')->where('step', '[A-Za-z]+');
 
 /*
 |--------------------------------------------------------------------------
@@ -107,7 +109,7 @@ if (Features::enabled(Features::resetPasswords())) {
 }
 
 // Registration...
-if (Features::enabled(Features::registration())) {
+/*if (Features::enabled(Features::registration())) {
     if ($enableViews) {
         Route::get('/inscription', [RegisteredUserController::class, 'create'])
             ->middleware(['guest'])
@@ -116,7 +118,7 @@ if (Features::enabled(Features::registration())) {
 
     Route::post('/inscription', [RegisteredUserController::class, 'store'])
         ->middleware(['guest']);
-}
+}*/
 
 // Email Verification...
 if (Features::enabled(Features::emailVerification())) {

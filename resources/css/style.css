@@ -4,3 +4,24 @@
 |------------------------------------------------------------------------------------
 */
 
+.basket-svg {
+    width: 28px;
+    height: 28px;
+}
+
+.basket-svg path,
+.basket-svg circle {
+    fill: rgb(107, 114, 128);
+    transition: all linear 0.15s;
+}
+
+a:active .basket-svg:hover path,
+a:active .basket-svg:hover circle,
+.basket-svg:hover path,
+.basket-svg:hover circle {
+    fill: rgb(55, 65, 81)!important;
+}
+
+.special-header-height {
+    height: 100%;
+}
