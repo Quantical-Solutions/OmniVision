@@ -3,9 +3,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
+
+            @if(Auth::check())
+
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('welcome') }}">
+                    <a href="{{ route('dashboard') }}">
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
@@ -15,14 +18,41 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
-                        {{ __('Welcome') }}
-                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('taches.index') }}" :active="request()->routeIs('taches.*')">
                         {{ __('Tasks') }}
                     </x-jet-nav-link>
                 </div>
-            </div>
+
+            @else
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="{{ route('welcome') }}">
+                        <x-jet-application-mark class="block h-9 w-auto" />
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+                        {{ __('OmniVision') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('demos') }}" :active="request()->routeIs('demos')">
+                        {{ __('Demos') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('docs') }}" :active="request()->routeIs('docs')">
+                        {{ __('Docs') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('pricing') }}" :active="request()->routeIs('pricing')">
+                        {{ __('Pricing') }}
+                    </x-jet-nav-link>
+                </div>
+
+            @endif
+
+        </div>
+
+        @if(Auth::check())
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -94,14 +124,18 @@
                             @endforeach
 
                             <div class="border-t border-gray-100"></div>
-                        @endif
+                    @endif
 
-                        <!-- Authentication -->
+                        <x-jet-dropdown-link href="{{ route('welcome') }}">
+                            {{ __('OmniVision') }}
+                        </x-jet-dropdown-link>
+
+                    <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
+                                                 onclick="event.preventDefault();
                                                             this.closest('form').submit();">
                                 {{ __('Logout') }}
                             </x-jet-dropdown-link>
@@ -109,6 +143,22 @@
                     </x-slot>
                 </x-jet-dropdown>
             </div>
+
+        @else
+
+            <!-- Settings Dropdown -->
+            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <x-jet-nav-link href="{{ route('login') }}" class="login-links">
+                    {{ __('Login') }}
+                </x-jet-nav-link>
+                @if (Route::has('register'))
+                    <x-jet-nav-link href="{{ route('register') }}" class="login-links">
+                        {{ __('Register') }}
+                    </x-jet-nav-link>
+                @endif
+            </div>
+
+        @endif
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
@@ -122,13 +172,41 @@
         </div>
     </div>
 
+    @if(Auth::check())
+
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('taches.index') }}" :active="request()->routeIs('taches.*')">
+                {{ __('Tasks') }}
+            </x-jet-responsive-nav-link>
         </div>
+
+    @else
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+                {{ __('OmniVision') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('demos') }}" :active="request()->routeIs('demos')">
+                {{ __('Demos') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('docs') }}" :active="request()->routeIs('docs')">
+                {{ __('Docs') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('pricing') }}" :active="request()->routeIs('pricing')">
+                {{ __('Pricing') }}
+            </x-jet-responsive-nav-link>
+        </div>
+
+    @endif
+
+    @if(Auth::check())
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -155,12 +233,16 @@
                     </x-jet-responsive-nav-link>
                 @endif
 
-                <!-- Authentication -->
+            <!-- Authentication -->
+                <x-jet-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
+                    {{ __('OmniVision') }}
+                </x-jet-responsive-nav-link>
+
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
+                                               onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                         {{ __('Logout') }}
                     </x-jet-responsive-nav-link>
@@ -196,5 +278,26 @@
                 @endif
             </div>
         </div>
+
+    @else
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                {{ __('Login') }}
+            </x-jet-responsive-nav-link>
+        </div>
+
+        @if (Route::has('register'))
+
+            <div class="pt-2 pb-3 space-y-1">
+                <x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                    {{ __('Register') }}
+                </x-jet-responsive-nav-link>
+            </div>
+
+        @endif
+
+    @endif
+
     </div>
 </nav>

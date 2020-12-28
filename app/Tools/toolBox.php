@@ -35,3 +35,15 @@ if (!function_exists('svg')) {
         }
     }
 }
+
+if (!function_exists('setTitle')) {
+
+    function setTitle($title)
+    {
+        $content = ' - ' . __(ucfirst($title));
+        if ($title === 'welcome') {
+            $content = '';
+        }
+        return $content;
+    }
+}

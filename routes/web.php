@@ -34,11 +34,26 @@ use Laravel\Jetstream\Jetstream;
 |
 */
 
-// Welcome...
+// Public...
 Route::get('/', 'App\Http\Controllers\WelcomeController@index')->name('welcome');
+Route::get('/demos', 'App\Http\Controllers\DemosController@index')->name('demos');
+Route::get('/docs', 'App\Http\Controllers\DocsController@index')->name('docs');
+Route::get('/prix', 'App\Http\Controllers\PricingController@index')->name('pricing');
 
-//Tasks...
+/*
+|--------------------------------------------------------------------------
+| Authenticated Routes
+|--------------------------------------------------------------------------
+|
+| Here are the routes which need to be connected for granted access.
+|
+*/
+
+// Tasks...
 Route::resource('taches', \App\Http\Controllers\TasksController::class);
+
+// Dashboard...
+Route::middleware(['auth:sanctum', 'verified'])->get('/tableau-de-bord', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 
 
 /*
@@ -49,8 +64,6 @@ Route::resource('taches', \App\Http\Controllers\TasksController::class);
  | Here are custom french routes.
  |
  */
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/tableau-de-bord', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 
 $enableViews = config('fortify.views', true);
 

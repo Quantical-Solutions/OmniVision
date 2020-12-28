@@ -8,7 +8,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>OmniVision</title>
+        <title>OmniVision{{ setTitle(Route::currentRouteName()) }}</title>
         <link rel="canonical" href="{{ config('app.url') }}">
         <link rel="icon" href="/storage/media/images/favicon.png">
         <link rel="stylesheet" href="/css/app.css" type="text/css">
