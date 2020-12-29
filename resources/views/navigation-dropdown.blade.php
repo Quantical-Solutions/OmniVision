@@ -151,7 +151,8 @@
                 @if(request()->routeIs('welcome') || request()->routeIs('demos') || request()->routeIs('docs') || request()->routeIs('pricing') || request()->routeIs('basket'))
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex special-header-height">
-                        <x-jet-nav-link href="{{ route('basket') }}" class="login-links" :active="request()->routeIs('basket')">
+                        <x-jet-nav-link href="{{ route('basket') }}" class="login-links relative" :active="request()->routeIs('basket')">
+                            <span class="isfilled"></span>
                             <svg viewBox="0 0 24 24" class="basket-svg">
                                 <circle cx="6" cy="19" r="2"></circle>
                                 <circle cx="16" cy="19" r="2"></circle>
@@ -170,7 +171,8 @@
                 <x-jet-nav-link href="{{ route('login') }}" class="login-links">
                     {{ __('Login') }}
                 </x-jet-nav-link>
-                <x-jet-nav-link href="{{ route('basket') }}" class="login-links" :active="request()->routeIs('basket')">
+                <x-jet-nav-link href="{{ route('basket') }}" class="login-links relative" :active="request()->routeIs('basket')">
+                    <span class="isfilled"></span>
                     <svg viewBox="0 0 24 24" class="basket-svg">
                         <circle cx="6" cy="19" r="2"></circle>
                         <circle cx="16" cy="19" r="2"></circle>
@@ -273,7 +275,7 @@
                     <x-jet-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
                         {{ __('OmniVision') }}
                     </x-jet-responsive-nav-link>
-                    
+
                 @endif
 
                 <form method="POST" action="{{ route('logout') }}">
@@ -317,7 +319,8 @@
             </div>
             @if(request()->routeIs('welcome') || request()->routeIs('demos') || request()->routeIs('docs') || request()->routeIs('pricing') || request()->routeIs('basket'))
                 <div class="pt-2 pb-3 space-y-1">
-                    <x-jet-responsive-nav-link href="{{ route('basket') }}" :active="request()->routeIs('basket')">
+                    <x-jet-responsive-nav-link href="{{ route('basket') }}" :active="request()->routeIs('basket')" class="relative">
+                        <span class="isfilled"></span>
                         <svg viewBox="0 0 24 24" class="basket-svg">
                             <circle cx="6" cy="19" r="2"></circle>
                             <circle cx="16" cy="19" r="2"></circle>
@@ -337,7 +340,8 @@
         </div>
 
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('basket') }}" :active="request()->routeIs('basket')">
+            <x-jet-responsive-nav-link href="{{ route('basket') }}" :active="request()->routeIs('basket')" class="relative">
+                <span class="isfilled"></span>
                 <svg viewBox="0 0 24 24" class="basket-svg">
                     <circle cx="6" cy="19" r="2"></circle>
                     <circle cx="16" cy="19" r="2"></circle>

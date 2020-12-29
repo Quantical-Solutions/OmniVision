@@ -4,6 +4,15 @@
 |------------------------------------------------------------------------------------
 */
 
+.row {
+    display: flex;
+}
+
+.pad-around {
+    padding: 20px;
+    width: calc(100% - 40px);
+}
+
 .basket-svg {
     width: 28px;
     height: 28px;
@@ -24,4 +33,171 @@ a:active .basket-svg:hover circle,
 
 .special-header-height {
     height: 100%;
+}
+
+#owl-1 {
+    height: 60vh;
+}
+
+#owl-1 .owl-stage-outer {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+}
+
+.owl-stage-outer, .owl-stage, .owl-item {
+    height: 100%;
+}
+
+#owl-1 .item {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.owl-dots {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.owl-prev,
+.owl-next {
+    position: absolute;
+    top: calc(50% - 15px);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    outline: none!important;
+    border: none!important;
+    background-color: rgba(249, 250, 251, 0.6)!important;
+    transform-origin: 50% 50%;
+    transform: scale(1);
+    border-radius: 100px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all linear 0.15s;
+}
+
+.owl-prev {
+    left: -15px;
+}
+
+.owl-next {
+    right: -15px;
+}
+
+.owl-prev svg,
+.owl-next svg {
+    width: 100%;
+    height: 100%;
+}
+
+.owl-prev svg path,
+.owl-next svg path {
+    fill: #FFF;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+    transform: scale(1.1);
+}
+
+.owl-dot {
+    outline: none!important;
+    border: none!important;
+}
+
+.owl-dot span {
+    z-index: 3;
+    display: flex;
+    border-radius: 100px;
+    background-color: transparent;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: all linear 0.15s;
+}
+
+.owl-dot:not(.active) span {
+    border: 2px solid #FFF;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+    margin: 5px 2px;
+}
+
+.owl-dot.active span {
+    border: 3px solid #FFF;
+    opacity: 1;
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#scroll-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    transition: all linear 0.2s;
+}
+
+#scroll-to-top svg {
+    width: 80%;
+}
+
+@media only screen and (min-width: 640px) {
+
+    #scroll-to-top.show {
+        opacity: 0.5;
+        visibility: visible;
+    }
+
+    #scroll-to-top.show:hover {
+        opacity: 1;
+    }
+
+    .sticky {
+        position: fixed;
+        top: -65px;
+        opacity: 0;
+        width: 100%;
+        z-index: 200;
+        transition: top linear 0.2s, opacity linear 0.15s;
+    }
+
+    .stickySticky {
+        top: 0;
+        opacity: 1;
+    }
+
+    .sticky + main {
+        padding-top: 65px;
+    }
+}
+
+.isfilled {
+    position: absolute;
+    z-index: 2;
+    top: 22px;
+    right: 5px;
+    background-color: firebrick;
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    display: flex;
+    border: 1px solid #FFF;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.3);
 }

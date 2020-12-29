@@ -32,6 +32,12 @@
             </main>
         </div>
 
+        @if(request()->routeIs('welcome') || request()->routeIs('demos') || request()->routeIs('docs') || request()->routeIs('pricing') || request()->routeIs('basket'))
+
+            @include('layouts.footer')
+
+        @endif
+
         @stack('modals')
 
         @livewireScripts
