@@ -60,13 +60,13 @@
                     <x-slot name="trigger">
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                             <button class="flex items-center text-sm border-2 border-transparent rounded-full focus:outline-none  transition duration-150 ease-in-out">
-                                <div>{{ Auth::user()->name }}&nbsp;</div>
+                                <div class="auth-user-name">{{ Auth::user()->name }}&nbsp;</div>
                                 &nbsp;
                                 <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                             </button>
                         @else
                             <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                <div>{{ Auth::user()->name }}</div>
+                                <div class="auth-user-name">{{ Auth::user()->name }}</div>
 
                                 <div class="ml-1">
                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -169,7 +169,9 @@
             <!-- Settings Dropdown -->
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <x-jet-nav-link href="{{ route('login') }}" class="login-links">
-                    {{ __('Login') }}
+                    <svg title="{{ __('Login') }}" viewBox="0 0 28 28" class="connexion-svg">
+                        <path d="M14 0c7.734 0 14 6.266 14 14 0 7.688-6.234 14-14 14-7.75 0-14-6.297-14-14 0-7.734 6.266-14 14-14zM23.672 21.109c1.453-2 2.328-4.453 2.328-7.109 0-6.609-5.391-12-12-12s-12 5.391-12 12c0 2.656 0.875 5.109 2.328 7.109 0.562-2.797 1.922-5.109 4.781-5.109 1.266 1.234 2.984 2 4.891 2s3.625-0.766 4.891-2c2.859 0 4.219 2.312 4.781 5.109zM20 11c0-3.313-2.688-6-6-6s-6 2.688-6 6 2.688 6 6 6 6-2.688 6-6z"></path>
+                    </svg>
                 </x-jet-nav-link>
                 <x-jet-nav-link href="{{ route('basket') }}" class="login-links relative" :active="request()->routeIs('basket')">
                     <span class="isfilled"></span>
@@ -335,7 +337,9 @@
 
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
-                {{ __('Login') }}
+                <svg title="{{ __('Login') }}" viewBox="0 0 28 28" class="connexion-svg">
+                    <path d="M14 0c7.734 0 14 6.266 14 14 0 7.688-6.234 14-14 14-7.75 0-14-6.297-14-14 0-7.734 6.266-14 14-14zM23.672 21.109c1.453-2 2.328-4.453 2.328-7.109 0-6.609-5.391-12-12-12s-12 5.391-12 12c0 2.656 0.875 5.109 2.328 7.109 0.562-2.797 1.922-5.109 4.781-5.109 1.266 1.234 2.984 2 4.891 2s3.625-0.766 4.891-2c2.859 0 4.219 2.312 4.781 5.109zM20 11c0-3.313-2.688-6-6-6s-6 2.688-6 6 2.688 6 6 6 6-2.688 6-6z"></path>
+                </svg>
             </x-jet-responsive-nav-link>
         </div>
 
