@@ -1,0 +1,20 @@
+{
+  "name": "omnivision-app",
+  "version": "1.0.0",
+  "description": "React Native version from Web App",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "keywords": [
+    "OmniVision",
+    "Quantical",
+    "Solutions",
+    "App"
+  ],
+  "author": "Quantical Solutions",
+  "license": "MIT",
+  "dependencies": {
+    "expo-cli": "^4.0.17"
+  }
+}
