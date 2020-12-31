@@ -41,7 +41,9 @@ Route::get('/docs', 'App\Http\Controllers\DocsController@index')->name('docs');
 Route::get('/plans', 'App\Http\Controllers\PricingController@index')->name('pricing');
 // Sales Hub
 Route::get('/panier/{step?}', '\App\Http\Controllers\SalesHubController@router')->name('basket')->where('step', '[A-Za-z]+');
-
+// XHR...
+Route::middleware(['only.ajax'])->post('/ajax', '\App\Http\Controllers\XhrController@index')->name('ajax');
+Route::middleware(['only.ajax'])->get('/ajax', function() { return abort(404); });
 /*
 |--------------------------------------------------------------------------
 | Authenticated Routes
