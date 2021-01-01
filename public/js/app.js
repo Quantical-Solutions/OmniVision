@@ -22579,8 +22579,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/gefr1116/omnivision/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/gefr1116/omnivision/resources/css/app.css */"./resources/css/app.css");
+__webpack_require__(/*! /Volumes/QS Backups/QS-Storage space/QS Development/Mac Fred Documents/QuanticalSolutionsGitHub/OmniVision/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Volumes/QS Backups/QS-Storage space/QS Development/Mac Fred Documents/QuanticalSolutionsGitHub/OmniVision/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })

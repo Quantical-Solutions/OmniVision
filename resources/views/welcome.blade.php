@@ -61,7 +61,7 @@
                 </svg>
                 <div class="relative pt-6 px-4 sm:px-6 lg:px-8"></div>
 
-                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-4 sm:px-6 md:mt-6 lg:mt-10 lg:px-8 xl:mt-12">
                     <div class="sm:text-center lg:text-left">
                         <h2 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                             <span class="block xl:inline">Data to enrich your</span>
