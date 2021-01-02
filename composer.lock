@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4f2b8b27912fda6606f99beef521fef",
+    "content-hash": "1b6a336940c29fc3bae646d4175f56f8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -493,16 +493,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.24",
+            "version": "2.1.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "ca90a3291eee1538cd48ff25163240695bd95448"
+                "reference": "0dbf5d78455d4d6a41d186da50adc1122ec066f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ca90a3291eee1538cd48ff25163240695bd95448",
-                "reference": "ca90a3291eee1538cd48ff25163240695bd95448",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/0dbf5d78455d4d6a41d186da50adc1122ec066f4",
+                "reference": "0dbf5d78455d4d6a41d186da50adc1122ec066f4",
                 "shasum": ""
             },
             "require": {
@@ -549,7 +549,7 @@
             ],
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
-                "source": "https://github.com/egulias/EmailValidator/tree/2.1.24"
+                "source": "https://github.com/egulias/EmailValidator/tree/2.1.25"
             },
             "funding": [
                 {
@@ -557,7 +557,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-14T15:56:27+00:00"
+            "time": "2020-12-29T14:50:06+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -2816,6 +2816,65 @@
                 "source": "https://github.com/bobthecow/psysh/tree/v0.10.5"
             },
             "time": "2020-12-04T02:51:30+00:00"
+        },
+        {
+            "name": "quantical-solutions/reactnative",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Quantical-Solutions/package-quantic-reactnative.git",
+                "reference": "066c2837d3706468e79f5c3c2bd30fe9ab5db674"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Quantical-Solutions/package-quantic-reactnative/zipball/066c2837d3706468e79f5c3c2bd30fe9ab5db674",
+                "reference": "066c2837d3706468e79f5c3c2bd30fe9ab5db674",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Quantic\\ReactNative\\ReactNativeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Quantic\\ReactNative\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frédéric Geffray",
+                    "email": "in-touch-fg@quanticalsolutions.com",
+                    "homepage": "https://quanticalsolutions.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Quantic Framework ReactNative for Laravel",
+            "homepage": "https://github.com/Quantical-Solutions/package-quantic-reactnative",
+            "keywords": [
+                "quantic",
+                "reactnative"
+            ],
+            "support": {
+                "issues": "https://github.com/Quantical-Solutions/package-quantic-reactnative/issues",
+                "source": "https://github.com/Quantical-Solutions/package-quantic-reactnative/tree/main"
+            },
+            "time": "2021-01-01T21:23:21+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5948,16 +6007,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.5.3",
+            "version": "2.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "d8dc4f90ed469f9f9313b976fb078c20585d5c99"
+                "reference": "8e907d81244649c5ea746e2ec30c32c5f59df472"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/d8dc4f90ed469f9f9313b976fb078c20585d5c99",
-                "reference": "d8dc4f90ed469f9f9313b976fb078c20585d5c99",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/8e907d81244649c5ea746e2ec30c32c5f59df472",
+                "reference": "8e907d81244649c5ea746e2ec30c32c5f59df472",
                 "shasum": ""
             },
             "require": {
@@ -6021,7 +6080,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2020-12-09T20:25:45+00:00"
+            "time": "2020-12-29T09:12:55+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -8429,7 +8488,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "quantical-solutions/reactnative": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
