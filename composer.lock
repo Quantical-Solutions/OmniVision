@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b6a336940c29fc3bae646d4175f56f8",
+    "content-hash": "cf4ab9270d7bfce6f7f1ea4745d83f10",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2823,17 +2823,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Quantical-Solutions/package-quantic-reactnative.git",
-                "reference": "066c2837d3706468e79f5c3c2bd30fe9ab5db674"
+                "reference": "122ca122f168cc109f97eab1023e77faf32bcd77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Quantical-Solutions/package-quantic-reactnative/zipball/066c2837d3706468e79f5c3c2bd30fe9ab5db674",
-                "reference": "066c2837d3706468e79f5c3c2bd30fe9ab5db674",
+                "url": "https://api.github.com/repos/Quantical-Solutions/package-quantic-reactnative/zipball/122ca122f168cc109f97eab1023e77faf32bcd77",
+                "reference": "122ca122f168cc109f97eab1023e77faf32bcd77",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": ">=7.3.0"
+                "php": ">=7.4"
             },
             "default-branch": true,
             "type": "library",
@@ -2874,7 +2874,7 @@
                 "issues": "https://github.com/Quantical-Solutions/package-quantic-reactnative/issues",
                 "source": "https://github.com/Quantical-Solutions/package-quantic-reactnative/tree/main"
             },
-            "time": "2021-01-01T21:23:21+00:00"
+            "time": "2021-01-02T13:27:56+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8494,7 +8494,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3|^8.0"
+        "php": ">=7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
