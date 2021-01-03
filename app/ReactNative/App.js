@@ -10,7 +10,7 @@ export default class App extends Component {
         return (
 
             <WebView
-                source={{ uri: 'https://omnivision.quanticalsolutions.com/' }}
+                source={{ uri: 'https://omnivision.quanticalsolutions.com' }}
             />
         );
     }
