@@ -30,5 +30,14 @@ return [
 
     'navigation' => [
         //
+    ],
+
+    /*
+     * Set StatusBar BackgroundColor et FontColor
+     */
+
+    'statusBar' => [
+        'backgroundColor' => '#FFF',
+        'fontColor' => 'dark-content' // 'default' | 'light-content' | 'dark-content'
     ]
 ];
