@@ -2823,12 +2823,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Quantical-Solutions/package-quantic-reactnative.git",
-                "reference": "122ca122f168cc109f97eab1023e77faf32bcd77"
+                "reference": "12a8ce85aacc65937b448a20871f53d4f3ebeb2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Quantical-Solutions/package-quantic-reactnative/zipball/122ca122f168cc109f97eab1023e77faf32bcd77",
-                "reference": "122ca122f168cc109f97eab1023e77faf32bcd77",
+                "url": "https://api.github.com/repos/Quantical-Solutions/package-quantic-reactnative/zipball/12a8ce85aacc65937b448a20871f53d4f3ebeb2e",
+                "reference": "12a8ce85aacc65937b448a20871f53d4f3ebeb2e",
                 "shasum": ""
             },
             "require": {
@@ -2874,7 +2874,7 @@
                 "issues": "https://github.com/Quantical-Solutions/package-quantic-reactnative/issues",
                 "source": "https://github.com/Quantical-Solutions/package-quantic-reactnative/tree/main"
             },
-            "time": "2021-01-02T13:27:56+00:00"
+            "time": "2021-01-04T08:56:09+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
