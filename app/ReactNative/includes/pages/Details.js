@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text, Button} from 'react-native';
+import {View, Text, Button} from 'react-native';
 import Header from '../common/Header';
 
 export default function DetailsScreen({ route, navigation } ) {

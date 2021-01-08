@@ -1,7 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, TextInput, Button} from 'react-native';
+import {View, TextInput, Button} from 'react-native';
 import Header from '../common/Header';
-import CreatePostIcon from '../../assets/svgs-collection/paragraph.svg';
 
 export default function CreatePostScreen({ navigation, route }) {
     const [postText, setPostText] = React.useState('');

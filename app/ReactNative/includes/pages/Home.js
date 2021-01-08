@@ -1,7 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, Text, Button} from 'react-native';
+import {View, Text, Button} from 'react-native';
 import Header from '../common/Header';
-import HomeIcon from '../../assets/svgs-collection/store.svg';
 
 export default function HomeScreen({ navigation, route }) {
 
