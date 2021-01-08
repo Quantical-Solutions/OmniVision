@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
-import {StatusBar, View, StyleSheet} from 'react-native';
-import {Url} from './includes/components/Url';
+import Application from "./includes/components/OffLineApp";
 
 export default class App extends Component {
 
     render() {
+
         return (
-            <View style={styles.container}>
-                <StatusBar hidden={false} backgroundColor={'#FFF'} barStyle={'dark-content'} />
-                <Url />
-            </View>
+            <Application />
         );
     }
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    }
-});
+};

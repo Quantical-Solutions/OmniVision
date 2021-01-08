@@ -13,8 +13,7 @@ class ReactNativeCreatePage extends Command
      * @var string
      */
     protected $signature = 'reactnative:create 
-                            {file? : File to create}
-                            {--type=null : Document type}';
+                            {file? : File to create}';
 
     /**
      * The console command description.
@@ -41,11 +40,10 @@ class ReactNativeCreatePage extends Command
     public function handle(): void
     {
         $arg = $this->argument('file');
-        $option = $this->option('type');
         $command = $this->argument('command');
         $method = (strpos($command, ':') > 0) ? explode(':', $command)[1] : '';
 
         // Execute Quantical Solutions ReactNative command
-        new Listener($this, $method, $arg, $option);
+        new Listener($this, $method, $arg);
     }
 }
