@@ -29,7 +29,23 @@ return [
      */
 
     'navigation' => [
-        //
+        'drawer' => [
+            'logo' => true, // true | false
+            'brand' => [
+                'OmniVision Mobile Solution',
+                'Quantical Solutions - IT & BI Solutions'
+            ],
+            'list' => [
+
+            ]
+        ],
+        'settings' => [
+            'active' => true, // true | false
+            'title' => 'Settings', // String | null
+            'list' => [
+
+            ]
+        ]
     ],
 
     /*
@@ -39,5 +55,20 @@ return [
     'statusBar' => [
         'backgroundColor' => '#FFF',
         'fontColor' => 'dark-content' // 'default' | 'light-content' | 'dark-content'
+    ],
+
+    /*
+     * Set Your App theme style
+     */
+
+    'theme' => [
+        'default' => 'light', // light | dark | null
+        'custom' => [
+            'primary' => '',
+            'secondary' => '',
+            'ternary' => '',
+            'titles' => '',
+            'content' => ''
+        ]
     ]
 ];
